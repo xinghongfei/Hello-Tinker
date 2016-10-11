@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
@@ -40,6 +41,7 @@ import tinker.sample.android.util.Utils;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Tinker.MainActivity";
+    private Bean mBean=new Bean();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Log.e(TAG, "i am on onCreate classloader:" + MainActivity.class.getClassLoader().toString());
         //test resource change
         Log.e(TAG, "i am on onCreate string:" + getResources().getString(R.string.test_resource));
-//        Log.e(TAG, "i am on patch onCreate");
+        Log.e(TAG, "i am on patch xing onCreate");
 
         Button loadPatchButton = (Button) findViewById(R.id.loadPatch);
 
@@ -59,25 +61,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button loadLibraryButton = (Button) findViewById(R.id.loadLibrary);
-
-        loadLibraryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //for lib/armeabi, just use TinkerInstaller.loadLibrary
-                TinkerInstaller.loadArmLibrary(getApplicationContext(), "stlport_shared");
-//                TinkerInstaller.loadLibraryFromTinker(getApplicationContext(), "assets/x86", "stlport_shared");
-            }
-        });
-
-        Button cleanPatchButton = (Button) findViewById(R.id.cleanPatch);
-
-        cleanPatchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Tinker.with(getApplicationContext()).cleanPatch();
-            }
-        });
 
         Button killSelfButton = (Button) findViewById(R.id.killSelf);
 
@@ -93,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
         buildInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showInfo(MainActivity.this);
+                Toast.makeText(MainActivity.this,mBean.getMessage(),Toast.LENGTH_LONG).show();
+//                showInfo(MainActivity.this);
+                Log.i("hehe","xing");
             }
         });
     }
