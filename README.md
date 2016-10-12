@@ -17,7 +17,7 @@ flags = ShareConstants.TINKER_ENABLE_ALL)                                //tinke
 public class SampleApplicationLike extends DefaultApplicationLike 
 ```
 
-4.然后构件assembleDebug，会在bakApk文件下生成apk文件（记录下文件A）。然后就像运行到机子上，这个就是有Bug的程序。  
+4.然后构件assembleDebug，会在bakApk文件下生成apk文件（记录下文件A）。然后运行到机子上，这里推荐使用真机作测试，这个就是有Bug的程序。  
 <img src="screenshots/assembleDebug.png" width="50%" />  
 5.修复程序中Bug。
 
