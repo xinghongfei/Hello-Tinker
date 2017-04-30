@@ -2,6 +2,7 @@
 这是一个基于腾讯热修复框架[Tinker](https://github.com/Tencent/tinker)的一个Demo，如果你没用过还真会遇到很多问题。我这里就针对官方文档里没有提到的细节和可能遇到的问题，以及构建的详细过程，给大家作个总结。
 
 <img src="screenshots/tinker.gif" />
+
 # 详解
 
 1.项目导入Android Studio后，要加入版本控制，并提交一次，不然会报错。
@@ -31,7 +32,7 @@ public class SampleApplicationLike extends DefaultApplicationLike
 
 9.修复Bug，重启，然后再测试。
 
-##About me
+## About me
 
 An android developer in Beijing.Welcome to offer me an [Interview invitation](mailto:maat.xing@gmail.com). If you have any new idea about this project, feel free to [contact me](mailto:maat.xing@gmail.com). :smiley:
 
